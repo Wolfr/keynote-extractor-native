@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17172F091DC3EC7400CC6DE0 /* slides.css in Resources */ = {isa = PBXBuildFile; fileRef = 17172F081DC3EC7400CC6DE0 /* slides.css */; };
+		17409D5F1DC4535F00972B55 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17409D5E1DC4535F00972B55 /* Output.swift */; };
+		175556D01DB9C3BF00F76A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175556C91DB9C3BF00F76A0A /* Assets.xcassets */; };
+		175556D11DB9C3BF00F76A0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175556CA1DB9C3BF00F76A0A /* Main.storyboard */; };
+		175556D31DB9C3BF00F76A0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175556CE1DB9C3BF00F76A0A /* AppDelegate.swift */; };
+		175556D41DB9C3BF00F76A0A /* DropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175556CF1DB9C3BF00F76A0A /* DropViewController.swift */; };
+		175556D71DB9CC2D00F76A0A /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175556D61DB9CC2D00F76A0A /* DropView.swift */; };
+		176995E11DBFF39900F4ADF3 /* CloseDocument.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 176995DE1DBFF39900F4ADF3 /* CloseDocument.applescript */; };
+		176995E21DBFF39900F4ADF3 /* ExportImages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 176995DF1DBFF39900F4ADF3 /* ExportImages.applescript */; };
+		176995E31DBFF39900F4ADF3 /* ExportKeynote09.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 176995E01DBFF39900F4ADF3 /* ExportKeynote09.applescript */; };
+		176AB0051DC158D10001FA25 /* OpenDocument.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 176AB0041DC158C30001FA25 /* OpenDocument.applescript */; };
+		17826A2F1DC7E1350087516A /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 17826A2D1DC7E1350087516A /* Credits.html */; };
+		178DAEF21DC6A95500322BA3 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 178DAEED1DC6A0EF00322BA3 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		178DAEF31DC6ACE200322BA3 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178DAEED1DC6A0EF00322BA3 /* Sparkle.framework */; };
+		17A1829B1DBDB89C005CD7DB /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A1829A1DBDB89C005CD7DB /* Extractor.swift */; };
+		17A1829D1DBDBB6F005CD7DB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A1829C1DBDBB6F005CD7DB /* Result.swift */; };
+		17A64DDF1DC296EC0053A02D /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A64DDE1DC296EC0053A02D /* Notes.swift */; };
+		17C38F7B1DC1B32C00C2E10B /* Unzip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C38F7A1DC1B32C00C2E10B /* Unzip.swift */; };
+		17CA911A1DBEAFAE00634E2C /* AppleScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA91191DBEAFAE00634E2C /* AppleScript.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		178DAEF11DC6A94800322BA3 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				178DAEF21DC6A95500322BA3 /* Sparkle.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		17172F081DC3EC7400CC6DE0 /* slides.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = slides.css; sourceTree = "<group>"; };
+		17409D5E1DC4535F00972B55 /* Output.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		175556B61DB9C2E900F76A0A /* Keynote Extractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keynote Extractor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		175556C91DB9C3BF00F76A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		175556CB1DB9C3BF00F76A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		175556CC1DB9C3BF00F76A0A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		175556CE1DB9C3BF00F76A0A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		175556CF1DB9C3BF00F76A0A /* DropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropViewController.swift; sourceTree = "<group>"; };
+		175556D61DB9CC2D00F76A0A /* DropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
+		176995DE1DBFF39900F4ADF3 /* CloseDocument.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = CloseDocument.applescript; sourceTree = "<group>"; };
+		176995DF1DBFF39900F4ADF3 /* ExportImages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = ExportImages.applescript; sourceTree = "<group>"; };
+		176995E01DBFF39900F4ADF3 /* ExportKeynote09.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = ExportKeynote09.applescript; sourceTree = "<group>"; };
+		176AB0041DC158C30001FA25 /* OpenDocument.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = OpenDocument.applescript; sourceTree = "<group>"; };
+		17826A2E1DC7E1350087516A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Credits.html; sourceTree = "<group>"; };
+		178DAEED1DC6A0EF00322BA3 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		17A1829A1DBDB89C005CD7DB /* Extractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extractor.swift; sourceTree = "<group>"; };
+		17A1829C1DBDBB6F005CD7DB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		17A64DDE1DC296EC0053A02D /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		17C38F7A1DC1B32C00C2E10B /* Unzip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unzip.swift; sourceTree = "<group>"; };
+		17CA91191DBEAFAE00634E2C /* AppleScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScript.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		175556B31DB9C2E900F76A0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				178DAEF31DC6ACE200322BA3 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		175556AD1DB9C2E900F76A0A = {
+			isa = PBXGroup;
+			children = (
+				175556CD1DB9C3BF00F76A0A /* Sources */,
+				175556C81DB9C3BF00F76A0A /* Resources */,
+				175556B71DB9C2E900F76A0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		175556B71DB9C2E900F76A0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				175556B61DB9C2E900F76A0A /* Keynote Extractor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		175556C81DB9C3BF00F76A0A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				175556CA1DB9C3BF00F76A0A /* Main.storyboard */,
+				175556C91DB9C3BF00F76A0A /* Assets.xcassets */,
+				17172F081DC3EC7400CC6DE0 /* slides.css */,
+				17826A2D1DC7E1350087516A /* Credits.html */,
+				175556CC1DB9C3BF00F76A0A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		175556CD1DB9C3BF00F76A0A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				175556CE1DB9C3BF00F76A0A /* AppDelegate.swift */,
+				175556CF1DB9C3BF00F76A0A /* DropViewController.swift */,
+				175556D61DB9CC2D00F76A0A /* DropView.swift */,
+				17A1829A1DBDB89C005CD7DB /* Extractor.swift */,
+				17CA91191DBEAFAE00634E2C /* AppleScript.swift */,
+				17C38F7A1DC1B32C00C2E10B /* Unzip.swift */,
+				17A64DDE1DC296EC0053A02D /* Notes.swift */,
+				17409D5E1DC4535F00972B55 /* Output.swift */,
+				17A1829C1DBDBB6F005CD7DB /* Result.swift */,
+				176995DD1DBFF39900F4ADF3 /* AppleScripts */,
+				178DAEEC1DC6A0EF00322BA3 /* Third-Party */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		176995DD1DBFF39900F4ADF3 /* AppleScripts */ = {
+			isa = PBXGroup;
+			children = (
+				176AB0041DC158C30001FA25 /* OpenDocument.applescript */,
+				176995DF1DBFF39900F4ADF3 /* ExportImages.applescript */,
+				176995E01DBFF39900F4ADF3 /* ExportKeynote09.applescript */,
+				176995DE1DBFF39900F4ADF3 /* CloseDocument.applescript */,
+			);
+			path = AppleScripts;
+			sourceTree = "<group>";
+		};
+		178DAEEC1DC6A0EF00322BA3 /* Third-Party */ = {
+			isa = PBXGroup;
+			children = (
+				178DAEED1DC6A0EF00322BA3 /* Sparkle.framework */,
+			);
+			path = "Third-Party";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		175556B51DB9C2E900F76A0A /* KeynoteExtractor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 175556C51DB9C2E900F76A0A /* Build configuration list for PBXNativeTarget "KeynoteExtractor" */;
+			buildPhases = (
+				175556B21DB9C2E900F76A0A /* Sources */,
+				175556B31DB9C2E900F76A0A /* Frameworks */,
+				178DAEF11DC6A94800322BA3 /* Copy Frameworks */,
+				175556B41DB9C2E900F76A0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeynoteExtractor;
+			productName = KeynoteExtractor;
+			productReference = 175556B61DB9C2E900F76A0A /* Keynote Extractor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		175556AE1DB9C2E900F76A0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Mono Company BVBA";
+				TargetAttributes = {
+					175556B51DB9C2E900F76A0A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 6Z7QW53WB6;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 175556B11DB9C2E900F76A0A /* Build configuration list for PBXProject "KeynoteExtractor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 175556AD1DB9C2E900F76A0A;
+			productRefGroup = 175556B71DB9C2E900F76A0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				175556B51DB9C2E900F76A0A /* KeynoteExtractor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		175556B41DB9C2E900F76A0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17172F091DC3EC7400CC6DE0 /* slides.css in Resources */,
+				17826A2F1DC7E1350087516A /* Credits.html in Resources */,
+				175556D01DB9C3BF00F76A0A /* Assets.xcassets in Resources */,
+				175556D11DB9C3BF00F76A0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		175556B21DB9C2E900F76A0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				175556D41DB9C3BF00F76A0A /* DropViewController.swift in Sources */,
+				17A1829D1DBDBB6F005CD7DB /* Result.swift in Sources */,
+				175556D31DB9C3BF00F76A0A /* AppDelegate.swift in Sources */,
+				17A1829B1DBDB89C005CD7DB /* Extractor.swift in Sources */,
+				175556D71DB9CC2D00F76A0A /* DropView.swift in Sources */,
+				176995E21DBFF39900F4ADF3 /* ExportImages.applescript in Sources */,
+				17C38F7B1DC1B32C00C2E10B /* Unzip.swift in Sources */,
+				176995E31DBFF39900F4ADF3 /* ExportKeynote09.applescript in Sources */,
+				176995E11DBFF39900F4ADF3 /* CloseDocument.applescript in Sources */,
+				176AB0051DC158D10001FA25 /* OpenDocument.applescript in Sources */,
+				17CA911A1DBEAFAE00634E2C /* AppleScript.swift in Sources */,
+				17A64DDF1DC296EC0053A02D /* Notes.swift in Sources */,
+				17409D5F1DC4535F00972B55 /* Output.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		175556CA1DB9C3BF00F76A0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				175556CB1DB9C3BF00F76A0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17826A2D1DC7E1350087516A /* Credits.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17826A2E1DC7E1350087516A /* Base */,
+			);
+			name = Credits.html;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		175556C31DB9C2E900F76A0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_COPYRIGHT = 2016;
+				APPLICATION_NAME = "Keynote Extractor";
+				APPLICATION_RELEASE = 1003a;
+				APPLICATION_VERSION = 1.0a3;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "Sources/Third-Party";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		175556C41DB9C2E900F76A0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_COPYRIGHT = 2016;
+				APPLICATION_NAME = "Keynote Extractor";
+				APPLICATION_RELEASE = 1003a;
+				APPLICATION_VERSION = 1.0a3;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "Sources/Third-Party";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		175556C61DB9C2E900F76A0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6Z7QW53WB6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sources/Third-Party",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mono.keynote-extractor";
+				PRODUCT_NAME = "$(APPLICATION_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		175556C71DB9C2E900F76A0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6Z7QW53WB6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sources/Third-Party",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mono.keynote-extractor";
+				PRODUCT_NAME = "$(APPLICATION_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		175556B11DB9C2E900F76A0A /* Build configuration list for PBXProject "KeynoteExtractor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				175556C31DB9C2E900F76A0A /* Debug */,
+				175556C41DB9C2E900F76A0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		175556C51DB9C2E900F76A0A /* Build configuration list for PBXNativeTarget "KeynoteExtractor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				175556C61DB9C2E900F76A0A /* Debug */,
+				175556C71DB9C2E900F76A0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 175556AE1DB9C2E900F76A0A /* Project object */;
+}
