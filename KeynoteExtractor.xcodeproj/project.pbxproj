@@ -176,7 +176,7 @@
 				TargetAttributes = {
 					175556B51DB9C2E900F76A0A = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6Z7QW53WB6;
+						DevelopmentTeam = SYAQ8QEF64;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -357,10 +357,12 @@
 		175556C61DB9C2E900F76A0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_RELEASE = 1004a;
+				APPLICATION_VERSION = 1.0a4;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6Z7QW53WB6;
+				DEVELOPMENT_TEAM = SYAQ8QEF64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sources/Third-Party",
@@ -376,10 +378,12 @@
 		175556C71DB9C2E900F76A0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_RELEASE = 1004a;
+				APPLICATION_VERSION = 1.0a4;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6Z7QW53WB6;
+				DEVELOPMENT_TEAM = SYAQ8QEF64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sources/Third-Party",
