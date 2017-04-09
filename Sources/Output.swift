@@ -40,7 +40,9 @@ struct Output {
             html += "    <div class=\"slide-annotations\">\n\n\(note)    </div>\n"
             html += "  </article>\n"
         }
-        
+
+        html += "\n<p class=\"credits\">Created with <a href=\"https://www.keynote-extractor.com\">Keynote Extractor</a>.</p>\n"
+
         html += "</body>\n</html>\n\n"
         
         self.html = html

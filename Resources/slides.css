@@ -147,3 +147,14 @@ img {
     font-size: 120%;
   }
 }
+
+.credits {
+    text-align: center;
+    color: #808080;
+    margin: 2em 0;
+    font-size: 80%;
+}
+
+.credits a {
+    color: #808080;
+}
