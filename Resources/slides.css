@@ -1,13 +1,45 @@
+/* ==========================================================================
+  Default CSS for Keynote Extractor generated slides
+ ========================================================================== */
+
+/* Font size changes across MQs
+   ========================================================================== */
+
+html {
+  font-size: 90%;
+}
+
+@media (min-width: 600px) {
+  
+  html {
+    font-size: 105%;
+  }
+
+}
+
+@media (min-width: 1000px) {
+  
+  html {
+    font-size: 120%;
+  }
+}
+
+@media (min-width: 1400px) {
+  
+  html {
+    font-size: 120%;
+  }
+}
+
+/* Basics (unclassed)
+   ========================================================================== */
+
 html {
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
-}
-
-html {
-  font-size: 90%;
 }
 
 body {
@@ -32,6 +64,15 @@ p {
   padding: 0 0 12px;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+/* Custom classes 
+   ========================================================================== */
+
 .subtle {
   color: #999;
 }
@@ -46,6 +87,9 @@ p {
 .note a {
   color: #5E5D50;
 }
+
+/* Headers/footers/slides layout 
+   ========================================================================== */
 
 .header,
 .footer {
@@ -63,7 +107,7 @@ p {
 }
 
 .slide-image {
-  box-shadow: 0 0 3px 0 rgba(0,0,0,0.2)
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
 }
 
 .slide:before,
@@ -81,17 +125,8 @@ p {
   float: left;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  margin-bottom: 0.5em;
-}
 
 @media (min-width: 600px) {
-  
-  html {
-    font-size: 105%;
-  }
 
   .slide-image {
     width: 50%;
@@ -103,7 +138,6 @@ img {
   }
 
 }
-
 
 @media (min-width: 1000px) {
   
@@ -126,9 +160,6 @@ img {
     padding-left: 20px;
   }
 
-  html {
-    font-size: 120%;
-  }
 }
 
 @media (min-width: 1400px) {
@@ -143,10 +174,10 @@ img {
     max-width: 1300px;
   }
 
-  html {
-    font-size: 120%;
-  }
 }
+
+/* Credits 
+   ========================================================================== */
 
 .credits {
     text-align: center;
