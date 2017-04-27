@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -220,7 +220,7 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="xAS-b5-VLE">
                                 <rect key="frame" x="40" y="35" width="266" height="200"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="226" translatesAutoresizingMaskIntoConstraints="NO" id="zBZ-kr-6uX">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="226" translatesAutoresizingMaskIntoConstraints="NO" id="zBZ-kr-6uX">
                                         <rect key="frame" x="77" y="51" width="113" height="17"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;do not localize&gt;" id="PD3-A9-SJ0">
                                             <font key="font" metaFont="system"/>
@@ -269,6 +269,16 @@ DQ
                             </customView>
                             <customView identifier="DropView" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-YI-MI9" customClass="DropView" customModule="Keynote_Extractor" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="306" height="230"/>
+                                <subviews>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-06-Y4s">
+                                        <rect key="frame" x="84" y="-2" width="139" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="Responsive images" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MKt-4i-2qY">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
                                 <accessibility description="Drop Keynote document here" identifier="DropView"/>
                             </customView>
                         </subviews>
