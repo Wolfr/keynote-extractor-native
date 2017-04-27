@@ -63,6 +63,7 @@
 		17A64DDE1DC296EC0053A02D /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		17C38F7A1DC1B32C00C2E10B /* Unzip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unzip.swift; sourceTree = "<group>"; };
 		17CA91191DBEAFAE00634E2C /* AppleScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScript.swift; sourceTree = "<group>"; };
+		8D91D95B1EB272BC009B2181 /* responsive-images.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "responsive-images.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				175556CA1DB9C3BF00F76A0A /* Main.storyboard */,
+				8D91D95B1EB272BC009B2181 /* responsive-images.sh */,
 				175556C91DB9C3BF00F76A0A /* Assets.xcassets */,
 				17172F081DC3EC7400CC6DE0 /* slides.css */,
 				17826A2D1DC7E1350087516A /* Credits.html */,
