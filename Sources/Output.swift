@@ -3,7 +3,6 @@
 //  KeynoteExtractor
 //
 //  Created by David Sinclair on 2016-10-28.
-//  Copyright © 2016 Mono Company BVBA. All rights reserved.
 //
 
 import Foundation

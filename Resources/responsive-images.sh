@@ -4,7 +4,6 @@
 #  KeynoteExtractor
 #
 #  Created by Johan Ronsse on 27/04/2017.
-#  Copyright © 2017 Mono Company BVBA. All rights reserved.
 
 # Bail on errors.
 set -o errexit;
