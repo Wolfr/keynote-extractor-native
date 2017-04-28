@@ -283,6 +283,9 @@ DQ
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="responsiveImagesCheck:" target="XfG-lQ-9wD" id="LFg-Ze-8Pv"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

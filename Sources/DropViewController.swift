@@ -21,12 +21,26 @@ protocol DropDelegate: class {
     func dropped(url: URL)
 }
 
+//class func launchedProcess(launchPath path: "Resources/responsive-images",
+//    arguments: []) -> waitUntilExit
+
 class DropViewController: NSViewController {
-    
+
     /// The URL of the Keynote file dropped on the drop view.  Nil if none yet.
     var sourceURL: URL?
     
+    // Check if the responsive images checkbox is checked
+    @IBAction func responsiveImagesCheck(_ sender: NSButton) {
+        if (sender.state == 1) {
+            // Checkbox is on so we have to run the script
+            print("Checkbox is on")
+        } else {
+            return // do nothing
+        }
+    }
+
     /// The URL of the output folder.  Nil if none yet.  Currently is the same as the source URL, without the extension, though could be a custom location in the future.
+    
     var destinationURL: URL? {
         if let url = sourceURL {
             return url.deletingPathExtension()
@@ -56,6 +70,8 @@ class DropViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         
         update(status: .idle)
     }
