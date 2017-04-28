@@ -214,11 +214,11 @@
             <objects>
                 <viewController storyboardIdentifier="DropViewController" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="DropViewController" customModule="Keynote_Extractor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="346" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="320"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="xAS-b5-VLE">
-                                <rect key="frame" x="40" y="35" width="266" height="200"/>
+                            <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAS-b5-VLE">
+                                <rect key="frame" x="40" y="74" width="266" height="200"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="226" translatesAutoresizingMaskIntoConstraints="NO" id="zBZ-kr-6uX">
                                         <rect key="frame" x="77" y="51" width="113" height="17"/>
@@ -255,42 +255,36 @@ DQ
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="wHA-IB-gz3" firstAttribute="centerY" secondItem="AqB-8i-Usk" secondAttribute="centerY" id="7FW-xT-MKX"/>
+                                    <constraint firstAttribute="trailing" secondItem="AqB-8i-Usk" secondAttribute="trailing" constant="101" id="7U3-Wk-pYk"/>
+                                    <constraint firstItem="AqB-8i-Usk" firstAttribute="centerX" secondItem="xAS-b5-VLE" secondAttribute="centerX" id="DVt-KL-NCb"/>
                                     <constraint firstAttribute="height" constant="200" id="IbN-xw-QPA"/>
                                     <constraint firstItem="zBZ-kr-6uX" firstAttribute="top" secondItem="AqB-8i-Usk" secondAttribute="bottom" constant="20" id="MXz-tB-NsX"/>
                                     <constraint firstItem="AqB-8i-Usk" firstAttribute="centerX" secondItem="xAS-b5-VLE" secondAttribute="centerX" id="OPB-Pf-OHG"/>
                                     <constraint firstItem="zBZ-kr-6uX" firstAttribute="centerX" secondItem="xAS-b5-VLE" secondAttribute="centerX" id="Otl-Sx-4cU"/>
+                                    <constraint firstItem="AqB-8i-Usk" firstAttribute="top" secondItem="xAS-b5-VLE" secondAttribute="top" constant="48" id="Qlb-Qu-fQ0"/>
                                     <constraint firstAttribute="bottom" secondItem="uVt-VP-gW2" secondAttribute="bottom" constant="10" id="RRc-OA-cDh"/>
                                     <constraint firstItem="uVt-VP-gW2" firstAttribute="top" secondItem="zBZ-kr-6uX" secondAttribute="bottom" constant="20" id="WlQ-VH-VpC"/>
+                                    <constraint firstItem="AqB-8i-Usk" firstAttribute="leading" secondItem="xAS-b5-VLE" secondAttribute="leading" constant="101" id="Z5E-ix-hkU"/>
                                     <constraint firstItem="zBZ-kr-6uX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xAS-b5-VLE" secondAttribute="leading" constant="20" symbolic="YES" id="be3-5O-3NW"/>
                                     <constraint firstItem="uVt-VP-gW2" firstAttribute="centerX" secondItem="xAS-b5-VLE" secondAttribute="centerX" id="fez-6O-Frr"/>
                                     <constraint firstItem="wHA-IB-gz3" firstAttribute="centerX" secondItem="AqB-8i-Usk" secondAttribute="centerX" id="rOv-bx-AE7"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zBZ-kr-6uX" secondAttribute="trailing" constant="20" symbolic="YES" id="zK6-Qh-G6v"/>
                                 </constraints>
                             </customView>
-                            <customView identifier="DropView" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-YI-MI9" customClass="DropView" customModule="Keynote_Extractor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="306" height="230"/>
-                                <subviews>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-06-Y4s">
-                                        <rect key="frame" x="84" y="-2" width="139" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="check" title="Responsive images" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MKt-4i-2qY">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                </subviews>
+                            <customView identifier="DropView" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-YI-MI9" customClass="DropView" customModule="Keynote_Extractor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="53" width="306" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <accessibility description="Drop Keynote document here" identifier="DropView"/>
                             </customView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-06-Y4s">
+                                <rect key="frame" x="104" y="23" width="139" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Responsive images" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MKt-4i-2qY">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="cVc-YI-MI9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="DK7-aa-cjg"/>
-                            <constraint firstItem="xAS-b5-VLE" firstAttribute="trailing" secondItem="cVc-YI-MI9" secondAttribute="trailing" constant="-20" id="KoW-4r-qNF"/>
-                            <constraint firstAttribute="trailing" secondItem="cVc-YI-MI9" secondAttribute="trailing" constant="20" symbolic="YES" id="buL-Ih-YPS"/>
-                            <constraint firstItem="xAS-b5-VLE" firstAttribute="leading" secondItem="cVc-YI-MI9" secondAttribute="leading" constant="20" id="c7K-r8-V5E"/>
-                            <constraint firstItem="cVc-YI-MI9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="den-7Q-FN6"/>
-                            <constraint firstAttribute="bottom" secondItem="cVc-YI-MI9" secondAttribute="bottom" constant="20" symbolic="YES" id="rlr-gB-elb"/>
-                            <constraint firstItem="xAS-b5-VLE" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="yb5-Xd-yLT"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="xAS-b5-VLE" id="5ZM-n0-RhC"/>

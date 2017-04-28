@@ -178,10 +178,10 @@ extension DropViewController: DropDelegate {
     func completion(result: Result<URL>) {
         if result.isSuccess {
             update(status: .success)
-            print("success: \(result.value)")
+            //print("success: \(result.value)")
         } else {
             update(status: .failure(error: result.error!))
-            print("failure: \(result.error)")
+            //print("failure: \(result.error)")
         }
         
         self.extractor = nil
