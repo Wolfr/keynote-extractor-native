@@ -21,8 +21,27 @@ protocol DropDelegate: class {
     func dropped(url: URL)
 }
 
-//class func launchedProcess(launchPath path: "Resources/responsive-images",
-//    arguments: []) -> waitUntilExit
+
+// In progress: run responsive image process
+// @todo figure out how to run local command
+// currently getting error that launch path is not accessible
+func runResponsiveImagesScript() {
+
+    // Create a task…
+    let task = Process()
+    
+    // Select a path…
+    task.launchPath = "say2"
+
+    // Pass any arguments to the command…
+    
+    task.arguments = []
+    
+    //Launch the task, and block the current thread until it's done…
+    task.launch()
+    task.waitUntilExit()
+
+}
 
 class DropViewController: NSViewController {
 
@@ -34,6 +53,7 @@ class DropViewController: NSViewController {
         if (sender.state == 1) {
             // Checkbox is on so we have to run the script
             print("Checkbox is on")
+            runResponsiveImagesScript()
         } else {
             return // do nothing
         }

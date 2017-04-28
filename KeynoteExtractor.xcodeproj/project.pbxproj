@@ -26,6 +26,7 @@
 		17A64DDF1DC296EC0053A02D /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A64DDE1DC296EC0053A02D /* Notes.swift */; };
 		17C38F7B1DC1B32C00C2E10B /* Unzip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C38F7A1DC1B32C00C2E10B /* Unzip.swift */; };
 		17CA911A1DBEAFAE00634E2C /* AppleScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA91191DBEAFAE00634E2C /* AppleScript.swift */; };
+		8D78D45C1EB394EC00D141E7 /* say2.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8D78D45B1EB394EC00D141E7 /* say2.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,8 @@
 		17A64DDE1DC296EC0053A02D /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		17C38F7A1DC1B32C00C2E10B /* Unzip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unzip.swift; sourceTree = "<group>"; };
 		17CA91191DBEAFAE00634E2C /* AppleScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScript.swift; sourceTree = "<group>"; };
+		8D78D45A1EB393B900D141E7 /* say.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = say.sh; sourceTree = "<group>"; };
+		8D78D45B1EB394EC00D141E7 /* say2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = say2.sh; sourceTree = "<group>"; };
 		8D91D95B1EB272BC009B2181 /* responsive-images.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "responsive-images.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +103,7 @@
 			children = (
 				175556CA1DB9C3BF00F76A0A /* Main.storyboard */,
 				8D91D95B1EB272BC009B2181 /* responsive-images.sh */,
+				8D78D45A1EB393B900D141E7 /* say.sh */,
 				175556C91DB9C3BF00F76A0A /* Assets.xcassets */,
 				17172F081DC3EC7400CC6DE0 /* slides.css */,
 				17826A2D1DC7E1350087516A /* Credits.html */,
@@ -113,6 +117,7 @@
 			children = (
 				175556CE1DB9C3BF00F76A0A /* AppDelegate.swift */,
 				175556CF1DB9C3BF00F76A0A /* DropViewController.swift */,
+				8D78D45B1EB394EC00D141E7 /* say2.sh */,
 				175556D61DB9CC2D00F76A0A /* DropView.swift */,
 				17A1829A1DBDB89C005CD7DB /* Extractor.swift */,
 				17CA91191DBEAFAE00634E2C /* AppleScript.swift */,
@@ -208,6 +213,7 @@
 			files = (
 				17172F091DC3EC7400CC6DE0 /* slides.css in Resources */,
 				17826A2F1DC7E1350087516A /* Credits.html in Resources */,
+				8D78D45C1EB394EC00D141E7 /* say2.sh in Resources */,
 				175556D01DB9C3BF00F76A0A /* Assets.xcassets in Resources */,
 				175556D11DB9C3BF00F76A0A /* Main.storyboard in Resources */,
 			);
