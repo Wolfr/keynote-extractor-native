@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17172F091DC3EC7400CC6DE0 /* slides.css in Resources */ = {isa = PBXBuildFile; fileRef = 17172F081DC3EC7400CC6DE0 /* slides.css */; };
 		17409D5F1DC4535F00972B55 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17409D5E1DC4535F00972B55 /* Output.swift */; };
 		175556D01DB9C3BF00F76A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175556C91DB9C3BF00F76A0A /* Assets.xcassets */; };
 		175556D11DB9C3BF00F76A0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175556CA1DB9C3BF00F76A0A /* Main.storyboard */; };
 		175556D31DB9C3BF00F76A0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175556CE1DB9C3BF00F76A0A /* AppDelegate.swift */; };
 		175556D41DB9C3BF00F76A0A /* DropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175556CF1DB9C3BF00F76A0A /* DropViewController.swift */; };
 		175556D71DB9CC2D00F76A0A /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175556D61DB9CC2D00F76A0A /* DropView.swift */; };
+		175902621EC655FC00854545 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175902611EC655FC00854545 /* PreferencesViewController.swift */; };
+		175902641EC65CDD00854545 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175902631EC65CDD00854545 /* Preferences.swift */; };
 		176995E11DBFF39900F4ADF3 /* CloseDocument.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 176995DE1DBFF39900F4ADF3 /* CloseDocument.applescript */; };
 		176995E21DBFF39900F4ADF3 /* ExportImages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 176995DF1DBFF39900F4ADF3 /* ExportImages.applescript */; };
 		176995E31DBFF39900F4ADF3 /* ExportKeynote09.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 176995E01DBFF39900F4ADF3 /* ExportKeynote09.applescript */; };
@@ -21,12 +22,15 @@
 		17826A2F1DC7E1350087516A /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 17826A2D1DC7E1350087516A /* Credits.html */; };
 		178DAEF21DC6A95500322BA3 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 178DAEED1DC6A0EF00322BA3 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		178DAEF31DC6ACE200322BA3 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178DAEED1DC6A0EF00322BA3 /* Sparkle.framework */; };
+		1794795A1EC7893700E7FFBC /* Themes in Resources */ = {isa = PBXBuildFile; fileRef = 175902651EC6AEA600854545 /* Themes */; };
+		1794795D1EC7A8A500E7FFBC /* Styles in Resources */ = {isa = PBXBuildFile; fileRef = 1794795B1EC7A8A500E7FFBC /* Styles */; };
 		17A1829B1DBDB89C005CD7DB /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A1829A1DBDB89C005CD7DB /* Extractor.swift */; };
 		17A1829D1DBDBB6F005CD7DB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A1829C1DBDBB6F005CD7DB /* Result.swift */; };
 		17A64DDF1DC296EC0053A02D /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A64DDE1DC296EC0053A02D /* Notes.swift */; };
+		17B4EFFC1EC7C1FB00805032 /* Responsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4EFFB1EC7C1FB00805032 /* Responsive.swift */; };
+		17B4EFFD1EC7C6FB00805032 /* responsive-images.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D95B1EB272BC009B2181 /* responsive-images.sh */; };
 		17C38F7B1DC1B32C00C2E10B /* Unzip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C38F7A1DC1B32C00C2E10B /* Unzip.swift */; };
 		17CA911A1DBEAFAE00634E2C /* AppleScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA91191DBEAFAE00634E2C /* AppleScript.swift */; };
-		8D78D45C1EB394EC00D141E7 /* say2.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8D78D45B1EB394EC00D141E7 /* say2.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,7 +48,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		17172F081DC3EC7400CC6DE0 /* slides.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = slides.css; sourceTree = "<group>"; };
 		17409D5E1DC4535F00972B55 /* Output.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		175556B61DB9C2E900F76A0A /* Keynote Extractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keynote Extractor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		175556C91DB9C3BF00F76A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,19 +56,22 @@
 		175556CE1DB9C3BF00F76A0A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		175556CF1DB9C3BF00F76A0A /* DropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropViewController.swift; sourceTree = "<group>"; };
 		175556D61DB9CC2D00F76A0A /* DropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
+		175902611EC655FC00854545 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		175902631EC65CDD00854545 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		175902661EC6AEA600854545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base; path = Base.lproj/Themes; sourceTree = "<group>"; };
 		176995DE1DBFF39900F4ADF3 /* CloseDocument.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = CloseDocument.applescript; sourceTree = "<group>"; };
 		176995DF1DBFF39900F4ADF3 /* ExportImages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = ExportImages.applescript; sourceTree = "<group>"; };
 		176995E01DBFF39900F4ADF3 /* ExportKeynote09.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = ExportKeynote09.applescript; sourceTree = "<group>"; };
 		176AB0041DC158C30001FA25 /* OpenDocument.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = OpenDocument.applescript; sourceTree = "<group>"; };
 		17826A2E1DC7E1350087516A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Credits.html; sourceTree = "<group>"; };
 		178DAEED1DC6A0EF00322BA3 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		1794795C1EC7A8A500E7FFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base; path = Base.lproj/Styles; sourceTree = "<group>"; };
 		17A1829A1DBDB89C005CD7DB /* Extractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extractor.swift; sourceTree = "<group>"; };
 		17A1829C1DBDBB6F005CD7DB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		17A64DDE1DC296EC0053A02D /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		17B4EFFB1EC7C1FB00805032 /* Responsive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responsive.swift; sourceTree = "<group>"; };
 		17C38F7A1DC1B32C00C2E10B /* Unzip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unzip.swift; sourceTree = "<group>"; };
 		17CA91191DBEAFAE00634E2C /* AppleScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScript.swift; sourceTree = "<group>"; };
-		8D78D45A1EB393B900D141E7 /* say.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = say.sh; sourceTree = "<group>"; };
-		8D78D45B1EB394EC00D141E7 /* say2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = say2.sh; sourceTree = "<group>"; };
 		8D91D95B1EB272BC009B2181 /* responsive-images.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "responsive-images.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,9 +109,9 @@
 			children = (
 				175556CA1DB9C3BF00F76A0A /* Main.storyboard */,
 				8D91D95B1EB272BC009B2181 /* responsive-images.sh */,
-				8D78D45A1EB393B900D141E7 /* say.sh */,
 				175556C91DB9C3BF00F76A0A /* Assets.xcassets */,
-				17172F081DC3EC7400CC6DE0 /* slides.css */,
+				1794795B1EC7A8A500E7FFBC /* Styles */,
+				175902651EC6AEA600854545 /* Themes */,
 				17826A2D1DC7E1350087516A /* Credits.html */,
 				175556CC1DB9C3BF00F76A0A /* Info.plist */,
 			);
@@ -116,13 +122,15 @@
 			isa = PBXGroup;
 			children = (
 				175556CE1DB9C3BF00F76A0A /* AppDelegate.swift */,
+				175902611EC655FC00854545 /* PreferencesViewController.swift */,
+				175902631EC65CDD00854545 /* Preferences.swift */,
 				175556CF1DB9C3BF00F76A0A /* DropViewController.swift */,
-				8D78D45B1EB394EC00D141E7 /* say2.sh */,
 				175556D61DB9CC2D00F76A0A /* DropView.swift */,
 				17A1829A1DBDB89C005CD7DB /* Extractor.swift */,
 				17CA91191DBEAFAE00634E2C /* AppleScript.swift */,
 				17C38F7A1DC1B32C00C2E10B /* Unzip.swift */,
 				17A64DDE1DC296EC0053A02D /* Notes.swift */,
+				17B4EFFB1EC7C1FB00805032 /* Responsive.swift */,
 				17409D5E1DC4535F00972B55 /* Output.swift */,
 				17A1829C1DBDBB6F005CD7DB /* Result.swift */,
 				176995DD1DBFF39900F4ADF3 /* AppleScripts */,
@@ -184,7 +192,7 @@
 					175556B51DB9C2E900F76A0A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = SYAQ8QEF64;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -211,11 +219,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17172F091DC3EC7400CC6DE0 /* slides.css in Resources */,
+				1794795A1EC7893700E7FFBC /* Themes in Resources */,
 				17826A2F1DC7E1350087516A /* Credits.html in Resources */,
-				8D78D45C1EB394EC00D141E7 /* say2.sh in Resources */,
 				175556D01DB9C3BF00F76A0A /* Assets.xcassets in Resources */,
+				1794795D1EC7A8A500E7FFBC /* Styles in Resources */,
 				175556D11DB9C3BF00F76A0A /* Main.storyboard in Resources */,
+				17B4EFFD1EC7C6FB00805032 /* responsive-images.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,11 +237,14 @@
 			files = (
 				175556D41DB9C3BF00F76A0A /* DropViewController.swift in Sources */,
 				17A1829D1DBDBB6F005CD7DB /* Result.swift in Sources */,
+				175902641EC65CDD00854545 /* Preferences.swift in Sources */,
 				175556D31DB9C3BF00F76A0A /* AppDelegate.swift in Sources */,
 				17A1829B1DBDB89C005CD7DB /* Extractor.swift in Sources */,
 				175556D71DB9CC2D00F76A0A /* DropView.swift in Sources */,
+				175902621EC655FC00854545 /* PreferencesViewController.swift in Sources */,
 				176995E21DBFF39900F4ADF3 /* ExportImages.applescript in Sources */,
 				17C38F7B1DC1B32C00C2E10B /* Unzip.swift in Sources */,
+				17B4EFFC1EC7C1FB00805032 /* Responsive.swift in Sources */,
 				176995E31DBFF39900F4ADF3 /* ExportKeynote09.applescript in Sources */,
 				176995E11DBFF39900F4ADF3 /* CloseDocument.applescript in Sources */,
 				176AB0051DC158D10001FA25 /* OpenDocument.applescript in Sources */,
@@ -253,12 +265,28 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		175902651EC6AEA600854545 /* Themes */ = {
+			isa = PBXVariantGroup;
+			children = (
+				175902661EC6AEA600854545 /* Base */,
+			);
+			name = Themes;
+			sourceTree = "<group>";
+		};
 		17826A2D1DC7E1350087516A /* Credits.html */ = {
 			isa = PBXVariantGroup;
 			children = (
 				17826A2E1DC7E1350087516A /* Base */,
 			);
 			name = Credits.html;
+			sourceTree = "<group>";
+		};
+		1794795B1EC7A8A500E7FFBC /* Styles */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1794795C1EC7A8A500E7FFBC /* Base */,
+			);
+			name = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -268,10 +296,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_COPYRIGHT = 2016;
+				APPLICATION_COPYRIGHT = "2016-2017";
 				APPLICATION_NAME = "Keynote Extractor";
-				APPLICATION_RELEASE = 1003a;
-				APPLICATION_VERSION = 1.0a3;
+				APPLICATION_RELEASE = 1004;
+				APPLICATION_VERSION = 1.1;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -321,10 +349,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_COPYRIGHT = 2016;
+				APPLICATION_COPYRIGHT = "2016-2017";
 				APPLICATION_NAME = "Keynote Extractor";
-				APPLICATION_RELEASE = 1003a;
-				APPLICATION_VERSION = 1.0a3;
+				APPLICATION_RELEASE = 1004;
+				APPLICATION_VERSION = 1.1;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -365,11 +393,8 @@
 		175556C61DB9C2E900F76A0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_COPYRIGHT = 2017;
-				APPLICATION_RELEASE = 1.0.2;
-				APPLICATION_VERSION = 1.0.2;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SYAQ8QEF64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -380,6 +405,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mono.keynote-extractor";
 				PRODUCT_NAME = "$(APPLICATION_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -387,11 +414,8 @@
 		175556C71DB9C2E900F76A0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_COPYRIGHT = 2017;
-				APPLICATION_RELEASE = 1.0.2;
-				APPLICATION_VERSION = 1.0.2;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SYAQ8QEF64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -402,6 +426,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mono.keynote-extractor";
 				PRODUCT_NAME = "$(APPLICATION_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -1,0 +1,15 @@
+/* Base skin (white)
+   ========================================================================== */
+
+body {
+  background: #FFF;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  color: #000;
+}
+
+.slide--bordered {
+  border-bottom: 1px solid #CCC;
+}

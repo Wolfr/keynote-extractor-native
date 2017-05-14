@@ -1,0 +1,22 @@
+/* Dark grey skin
+   ========================================================================== */
+
+body {
+  background: #333;
+  color: #DDD;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #FFF;
+}
+
+a {
+  color: #FFF;
+}
+
+.slide--bordered {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}

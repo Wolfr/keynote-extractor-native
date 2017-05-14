@@ -31,5 +31,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
+    
+    /// Handles the help button.
+    @IBAction func help(_ sender: NSButton) {
+        if let url = URL(string: "https://keynote-extractor.com/") {
+            NSWorkspace.shared().open(url)
+        }
+    }
 }
 

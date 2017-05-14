@@ -1,0 +1,120 @@
+/* Layout for advanced output
+   ========================================================================== */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+}
+
+.slides {
+  height: 100%;
+}
+
+.slide-image {
+  width: 90%;
+  margin: 1em auto;
+}
+
+.slide-notes {
+  width: 90%;
+  margin: 1em auto;
+  padding-bottom: 50px;
+}
+
+.slide-image img {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+
+  .slide-image {
+    width: 100%; /* explicit width */
+    height: 100%;
+  }
+
+  .slide {
+    height: 100%;
+    align-items: center;
+  }
+
+  .slide-image {
+    display: flex;
+    align-items: center;
+  }
+
+  .js-notes-active .slide {
+    padding: 5%;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .js-notes-active .slide-image {
+    width: 58%;
+  }
+
+  .js-notes-active .slide-notes {
+    width: 38%;
+  }
+  
+}
+
+#slide-pos {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 13px;
+}
+
+@media (max-width: 799px) {
+  #show-shortcuts,
+  #shortcuts {
+    display: none;
+  }
+}
+
+#show-shortcuts {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+}
+
+#shortcuts {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  color: #FFF;
+  background: rgba(0,0,0,0.2);
+  padding: 0 18px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#shortcuts ul {
+  padding-left: 20px;
+}
+
+@media (min-width: 799px) {
+  #explicit-controls {
+    display: none;
+  }
+}
+
+#explicit-controls {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+#explicit-controls button {
+  background: #333;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #FFF;
+  border-radius: 3px;
+  padding: 10px 20px;
+}

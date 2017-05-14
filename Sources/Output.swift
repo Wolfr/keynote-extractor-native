@@ -8,49 +8,136 @@
 import Foundation
 
 enum OutputError: Error {
-    case missingCSS
+    case missingTemplate
+    case invalidTemplate
+    case insufficientImages
+    case missingResource
+    case missingTheme
 }
 
 struct Output {
     
     let imagesURL: URL
     let notes: [String]
-    let html: String
+    var html: String?
+    var json: String?
     
-    /// Initializer.  Prepares the HTML to output from the images and notes.
+    /// Initializer.
     ///
     /// - Parameter imagesURL: URL of the temporary images folder.
     /// - Parameter notes: Array of notes as HTML.
-    /// - Throws: A Cocoa error if the images folder can't be read.
-    init(images imagesURL: URL, notes: [String]) throws {
+    init(images imagesURL: URL, notes: [String]) {
         self.imagesURL = imagesURL
         self.notes = notes
+    }
+    
+    /// Prepares the HTML and/or JSON to output from the images and notes.
+    ///
+    /// - Parameter title: The title of the presentation.
+    /// - Throws: `OutputError.missingTemplate` if the style template couldn't be located, `OutputError.invalidTemplate` if the style template isn't valid, or a Cocoa error if the images folder can't be read, or JSON serialization fails.
+    mutating func generate(title: String) throws {
+        let allImageNames = try FileManager.default.contentsOfDirectory(atPath: imagesURL.path)
         
-        let imageNames = try FileManager.default.contentsOfDirectory(atPath: imagesURL.path)
+        let imageNames = allImageNames.filter { return !$0.contains("-sm") && !$0.contains("-md") && !$0.contains("-lg") }
         
-        var html = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n"
-        html += "  <link rel=\"stylesheet\" href=\"slides.css\">\n"
-        html += "  <meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\n"
-        html += "</head>\n\n<body>\n"
-        
-        for (index, note) in notes.enumerated() {
-            html += "  <article class=\"slide\">\n"
-            html += "    <img class=\"slide-image\" src=\"images/\(imageNames[index])\" />\n"
-            html += "    <div class=\"slide-annotations\">\n\n\(note)    </div>\n"
-            html += "  </article>\n"
+        if Preferences.shared.formatHTML {
+            guard let templateURL = Bundle.main.url(forResource: Preferences.shared.styleFilename, withExtension: "html", subdirectory: Preferences.Style.folderName)
+                else {
+                    throw OutputError.missingTemplate
+            }
+            
+            var template = try NSString(contentsOf: templateURL, encoding: String.Encoding.utf8.rawValue) as String
+            
+            template = template.replacingOccurrences(of: "{{title}}", with: title)
+            template = template.replacingOccurrences(of: "{{theme}}", with: Preferences.shared.themeOutputName)
+            
+            guard let start = template.range(of: "{{slide}}"), let end = template.range(of: "{{/slide}}") else {
+                throw OutputError.invalidTemplate
+            }
+            
+            let templatePrefix = template.substring(to: start.lowerBound)
+            let templateSlide = template.substring(with: Range(uncheckedBounds: (lower: start.upperBound, upper: end.lowerBound)))
+            let templateSuffix = template.substring(from: end.upperBound)
+            
+            var html = templatePrefix
+            
+            for (index, note) in notes.enumerated() {
+                guard index < imageNames.count else {
+                    throw OutputError.insufficientImages
+                }
+                
+                var image = "images/\(imageNames[index])"
+                
+                if Preferences.shared.responsiveImages {
+                    let names = responsive(baseName: image)
+                    
+                    image = "\(names.small)\" srcset=\"\(names.large) 1024w, \(names.medium) 640w, \(names.small) 320w\" sizes=\"(min-width: 36em) 33.3vw, 100vw"
+                }
+                
+                var slide = templateSlide.replacingOccurrences(of: "{{image}}", with: image)
+                slide = slide.replacingOccurrences(of: "{{notes}}", with: note)
+                
+                html += slide
+            }
+            
+            html += templateSuffix
+            
+            self.html = html
         }
-
-        html += "\n<p class=\"credits\">Created with <a href=\"https://www.keynote-extractor.com\">Keynote Extractor</a>.</p>\n"
-
-        html += "</body>\n</html>\n\n"
         
-        self.html = html
+        if Preferences.shared.formatJSON {
+            typealias JSONDictionary = [String:String]
+            var array = [JSONDictionary]()
+            
+            for (index, note) in notes.enumerated() {
+                let image = "images/\(imageNames[index])"
+                
+                if Preferences.shared.responsiveImages {
+                    let names = responsive(baseName: image)
+                    let dict = ["image" : image, "image-lg" : names.large, "image-md" : names.medium, "image-sm" : names.small, "notes" : note]
+                    
+                    array.append(dict)
+                } else {
+                    let dict = ["image" : image, "notes" : note]
+                    
+                    array.append(dict)
+                }
+            }
+            
+            let data = try JSONSerialization.data(withJSONObject: array, options: .prettyPrinted)
+            
+            self.json = String(data: data, encoding: String.Encoding.utf8)
+        }
+    }
+    
+    private func responsive(baseName: String) -> (small: String, medium: String, large: String) {
+        let temp = NSString(string: baseName)
+        let filename = temp.deletingPathExtension
+        let fileExtension = temp.pathExtension
+        
+        return (small: "\(filename)-sm.\(fileExtension)", medium: "\(filename)-md.\(fileExtension)", large: "\(filename)-lg.\(fileExtension)")
+    }
+    
+    /// Copies the source file to the destination.
+    ///
+    /// - Parameter sourceURL: A URL of a file to copy.
+    /// - Parameter destinationURL: A URL of where to save the output.
+    /// - Throws: `OutputError.missingResource` if the source couldn't be located, or a Cocoa error if it couldn't be written out.
+    func copy(url sourceURL: URL?, to destinationURL: URL, named destinationName: String? = nil) throws {
+        guard let sourceURL = sourceURL
+            else {
+                throw OutputError.missingResource
+        }
+        
+        let finalDestinationURL = destinationURL.appendingPathComponent(destinationName ?? sourceURL.lastPathComponent)
+        
+        try FileManager.default.copyItem(at: sourceURL, to: finalDestinationURL)
     }
     
     /// Saves the HTML, CSS and images to the destination URL.
     ///
     /// - Parameter destinationURL: A URL of where to save the output.
-    /// - Throws: `OutputError.missingCSS` if the CSS couldn't be located, or a Cocoa error if anything couldn't be written out.
+    /// - Throws: `OutputError.missingResource` if the CSS couldn't be located, `OutputError.missingTheme` if a theme CSS couldn't be located, or a Cocoa error if anything couldn't be written out.
     func write(to destinationURL: URL) throws {
         let fileManager = FileManager.default
         
@@ -64,17 +151,31 @@ struct Output {
         let imagesDestinationURL = destinationURL.appendingPathComponent("images")
         try fileManager.moveItem(at: imagesURL, to: imagesDestinationURL)
         
-        // Copy the CSS into the output folder
-        guard let cssSourceURL = Bundle.main.url(forResource: "slides", withExtension: "css")
-            else {
-                throw OutputError.missingCSS
+        // Write out the HTML, if required
+        if let html = html {
+            // Copy the base CSS into the output folder
+            try copy(url: Bundle.main.url(forResource: "base", withExtension: "css", subdirectory: Preferences.Style.folderName), to: destinationURL)
+            
+            // Copy the style CSS into the output folder
+            try copy(url: Bundle.main.url(forResource: Preferences.shared.styleFilename, withExtension: "css", subdirectory: Preferences.Style.folderName), to: destinationURL)
+            
+            // Copy the theme CSS into the output folder
+            try copy(url: Bundle.main.url(forResource: Preferences.shared.theme, withExtension: "css", subdirectory: Preferences.Theme.folderName), to: destinationURL, named: Preferences.shared.themeOutputName)
+            
+            if Preferences.shared.style == .slideshow {
+                // Copy the slideshow Javascript into the output folder
+                try copy(url: Bundle.main.url(forResource: Preferences.shared.styleFilename, withExtension: "js", subdirectory: Preferences.Style.folderName), to: destinationURL)
+            }
+            
+            let htmlURL = destinationURL.appendingPathComponent("index").appendingPathExtension("html")
+            try html.write(to: htmlURL, atomically: false, encoding: .utf8)
         }
-        let cssDestinationURL = destinationURL.appendingPathComponent("slides.css")
-        try fileManager.copyItem(at: cssSourceURL, to: cssDestinationURL)
         
-        // Write out the HTML
-        let htmlURL = destinationURL.appendingPathComponent("index").appendingPathExtension("html")
-        try html.write(to: htmlURL, atomically: false, encoding: .utf8)
+        // Write out the JSON, if required
+        if let json = json {
+            let jsonURL = destinationURL.appendingPathComponent("index").appendingPathExtension("json")
+            try json.write(to: jsonURL, atomically: false, encoding: .utf8)
+        }
     }
 }
 

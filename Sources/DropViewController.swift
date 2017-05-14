@@ -131,7 +131,7 @@ class DropViewController: NSViewController {
             statusLabel.stringValue = "Drop a Keynote document here\nto export as HTML."
             imageView.image = NSImage(named: "Idle")
         case .processing(_):
-            statusLabel.stringValue = "Extracting your document..."
+            statusLabel.stringValue = "Extracting your document.\n\nApple Keynote will open; please don't close it until done."
         case .success:
             statusLabel.stringValue = "Extraction complete."
             imageView.image = NSImage(named: "Success")
