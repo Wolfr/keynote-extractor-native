@@ -416,10 +416,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="346" height="292"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView identifier="DropView" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-YI-MI9" customClass="DropView" customModule="Keynote_Extractor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="66" width="306" height="206"/>
-                                <accessibility description="Drop Keynote document here" identifier="DropView"/>
-                            </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="xAS-b5-VLE">
                                 <rect key="frame" x="20" y="72" width="306" height="200"/>
                                 <subviews>
@@ -455,6 +451,10 @@
                                     <constraint firstItem="wHA-IB-gz3" firstAttribute="centerX" secondItem="AqB-8i-Usk" secondAttribute="centerX" id="rOv-bx-AE7"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zBZ-kr-6uX" secondAttribute="trailing" constant="20" symbolic="YES" id="zK6-Qh-G6v"/>
                                 </constraints>
+                            </customView>
+                            <customView identifier="DropView" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-YI-MI9" customClass="DropView" customModule="Keynote_Extractor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="66" width="306" height="206"/>
+                                <accessibility description="Drop Keynote document here" identifier="DropView"/>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uVt-VP-gW2">
                                 <rect key="frame" x="105" y="19" width="136" height="32"/>
