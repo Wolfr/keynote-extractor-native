@@ -9,8 +9,17 @@ body {
   padding: 0;
 }
 
+img, video {
+  max-width: 100%;
+}
+
 .slides {
   height: 100%;
+}
+
+.slide {
+  /* Will be display: flex; */
+  flex-direction: column;
 }
 
 .slide-image {
@@ -39,6 +48,7 @@ body {
   .slide {
     height: 100%;
     align-items: center;
+    flex-direction: row;
   }
 
   .slide-image {
