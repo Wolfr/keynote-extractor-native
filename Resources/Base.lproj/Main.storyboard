@@ -240,8 +240,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="467" height="327"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="Bb1-oM-6MK">
-                                <rect key="frame" x="127" y="117" width="59" height="18"/>
+                            <button verticalHuggingPriority="752" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bb1-oM-6MK">
+                                <rect key="frame" x="127" y="115" width="59" height="18"/>
                                 <buttonCell key="cell" type="check" title="HTML" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="he0-QV-T56">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -250,8 +250,8 @@
                                     <action selector="formatHTMLChosen:" target="PhF-xv-Qon" id="BBc-Bp-G5A"/>
                                 </connections>
                             </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="yJ7-2d-9G3">
-                                <rect key="frame" x="197" y="117" width="57" height="18"/>
+                            <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJ7-2d-9G3">
+                                <rect key="frame" x="197" y="115" width="57" height="18"/>
                                 <buttonCell key="cell" type="check" title="JSON" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mbU-Be-GC6">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -260,8 +260,8 @@
                                     <action selector="formatJSONChosen:" target="PhF-xv-Qon" id="oTz-Sr-FVC"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="tJ7-MZ-G2H">
-                                <rect key="frame" x="128" y="249" width="83" height="18"/>
+                            <button verticalHuggingPriority="754" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJ7-MZ-G2H">
+                                <rect key="frame" x="128" y="247" width="83" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Web page" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="c3F-AX-IQ6">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -296,8 +296,8 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="YgW-ug-5gY">
-                                <rect key="frame" x="145" y="146" width="274" height="28"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="YgW-ug-5gY">
+                                <rect key="frame" x="145" y="148" width="274" height="28"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Outputs a slideshow that shows slide by slide, with shortcuts to navigate." id="glY-jg-ncF">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -420,7 +420,7 @@
                                 <rect key="frame" x="20" y="72" width="306" height="200"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="226" translatesAutoresizingMaskIntoConstraints="NO" id="zBZ-kr-6uX">
-                                        <rect key="frame" x="97" y="59" width="113" height="17"/>
+                                        <rect key="frame" x="97" y="49" width="113" height="17"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;do not localize&gt;" id="PD3-A9-SJ0">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -428,7 +428,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AqB-8i-Usk">
-                                        <rect key="frame" x="121" y="96" width="64" height="64"/>
+                                        <rect key="frame" x="121" y="86" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="ub2-30-uKI"/>
                                             <constraint firstAttribute="height" constant="64" id="zpr-gT-ftZ"/>
@@ -436,11 +436,11 @@
                                         <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Idle" id="Ovd-ns-Oir"/>
                                     </imageView>
                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="1" bezeled="NO" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="wHA-IB-gz3">
-                                        <rect key="frame" x="137" y="112" width="32" height="32"/>
+                                        <rect key="frame" x="137" y="102" width="32" height="32"/>
                                     </progressIndicator>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="AqB-8i-Usk" firstAttribute="top" secondItem="xAS-b5-VLE" secondAttribute="top" constant="40" id="64M-Tt-FAk"/>
+                                    <constraint firstItem="AqB-8i-Usk" firstAttribute="top" secondItem="xAS-b5-VLE" secondAttribute="top" constant="50" id="64M-Tt-FAk"/>
                                     <constraint firstItem="wHA-IB-gz3" firstAttribute="centerY" secondItem="AqB-8i-Usk" secondAttribute="centerY" id="7FW-xT-MKX"/>
                                     <constraint firstAttribute="height" constant="200" id="IbN-xw-QPA"/>
                                     <constraint firstItem="zBZ-kr-6uX" firstAttribute="top" secondItem="AqB-8i-Usk" secondAttribute="bottom" constant="20" id="MXz-tB-NsX"/>
@@ -458,7 +458,7 @@
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uVt-VP-gW2">
                                 <rect key="frame" x="105" y="19" width="136" height="32"/>
-                                <buttonCell key="cell" type="push" title="Reveal in Finder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3pW-hE-RID">
+                                <buttonCell key="cell" type="push" title="Reveal in Finder" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="3pW-hE-RID">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
