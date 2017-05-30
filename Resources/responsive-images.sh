@@ -12,9 +12,9 @@ set -o errexit;
 # the original basename and the extension. E.g. "foo.jpg" for label " + large"
 # will become "foo + large.jpg".
 sizes=(
-    1024='-lg'
-    640='-md'
-    320='-sm'
+    984='-lg'
+    728='-md'
+    375='-sm'
 );
 
 # Configure the extensions to look for. Note: no wildcards.
@@ -60,10 +60,15 @@ done;
 for original in "${files[@]}"; do
     extension="${original##*.}";
     basename="${original/%.$extension}";
-    
-    for size in "${sizes[@]}"; do
-        max_width="${size%=*}";
-        label="${size#*=}";
-        sips -Z "$max_width" "$original" --out "$basename$label.$extension";
-    done;
+
+    if [ "$2" = "responsive" ]; then
+        for size in "${sizes[@]}"; do
+            max_width="${size%=*}";
+            label="${size#*=}";
+            sips -Z "$max_width" -s format jpeg -s formatOptions 60 "$original" --out "$basename$label.jpg";
+        done;
+    fi;
+
+    sips -s format jpeg -s formatOptions 60 "$original" --out "$basename.jpg";
+    rm "$original";
 done;

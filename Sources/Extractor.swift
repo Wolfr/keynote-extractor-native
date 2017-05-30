@@ -75,9 +75,7 @@ struct Extractor {
                 let apxlURL = unzipURL.appendingPathComponent("index.apxl", isDirectory: false)
                 
                 currentStep = self.report(step: currentStep, of: numberOfSteps)
-                if Preferences.shared.responsiveImages {
-                    try Responsive(url: imagesURL).execute()
-                }
+                try Responsive(url: imagesURL).execute()
                 
                 let notes = try Notes(url: apxlURL).parse()
                 

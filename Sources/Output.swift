@@ -71,8 +71,10 @@ struct Output {
                 if Preferences.shared.responsiveImages {
                     let names = responsive(baseName: image)
                     
-                    image = "\(names.small)\" srcset=\"\(names.large) 1024w, \(names.medium) 640w, \(names.small) 320w\" sizes=\"(min-width: 36em) 33.3vw, 100vw"
+                    image = "\(image)\" srcset=\"\(names.large) 984w, \(names.medium) 728w, \(names.small) 375w\" sizes=\"100vw"
                 }
+                
+                image += "\" alt=\"Image of slide number \(index + 1)"
                 
                 var slide = templateSlide.replacingOccurrences(of: "{{image}}", with: image)
                 slide = slide.replacingOccurrences(of: "{{notes}}", with: note)
@@ -86,7 +88,7 @@ struct Output {
         }
         
         if Preferences.shared.formatJSON {
-            typealias JSONDictionary = [String:String]
+            typealias JSONDictionary = [String:Any]
             var array = [JSONDictionary]()
             
             for (index, note) in notes.enumerated() {
@@ -94,7 +96,8 @@ struct Output {
                 
                 if Preferences.shared.responsiveImages {
                     let names = responsive(baseName: image)
-                    let dict = ["image" : image, "image-lg" : names.large, "image-md" : names.medium, "image-sm" : names.small, "notes" : note]
+                    let subdict: JSONDictionary = ["lg" : names.large, "md" : names.medium, "sm" : names.small]
+                    let dict: JSONDictionary = ["image" : image, "images" : subdict, "notes" : note]
                     
                     array.append(dict)
                 } else {

@@ -30,7 +30,7 @@ struct Responsive {
             throw ResponsiveError.failed
         }
         
-        let process = Process.launchedProcess(launchPath: "/bin/bash", arguments: [scriptURL.path, url.path])
+        let process = Process.launchedProcess(launchPath: "/bin/bash", arguments: [scriptURL.path, url.path, Preferences.shared.responsiveImages ? "responsive" : "single"])
         
         process.waitUntilExit()
         

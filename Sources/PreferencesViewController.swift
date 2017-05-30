@@ -59,6 +59,14 @@ class PreferencesViewController: NSViewController {
         }
     }
     
+    @IBOutlet weak var existsPopup: NSPopUpButton! {
+        didSet {
+            let exists = Preferences.shared.exists
+            
+            existsPopup.selectItem(withTag: exists.rawValue)
+        }
+    }
+    
     @IBAction func themeChosen(_ sender: NSPopUpButton) {
         Preferences.shared.theme = sender.titleOfSelectedItem ?? Preferences.Defaults.theme
     }
@@ -77,5 +85,9 @@ class PreferencesViewController: NSViewController {
     
     @IBAction func responsiveImagesChosen(_ sender: NSButton) {
         Preferences.shared.responsiveImages = sender.state == NSOnState
+    }
+    
+    @IBAction func existsChosen(_ sender: NSButton) {
+        Preferences.shared.exists = Preferences.Exists(rawValue: sender.selectedTag()) ?? .ask
     }
 }

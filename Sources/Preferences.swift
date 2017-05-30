@@ -25,6 +25,7 @@ class Preferences {
         static let html = "html"
         static let json = "json"
         static let responsive = "responsive"
+        static let exists = "exists"
     }
     
     struct Theme {
@@ -100,6 +101,23 @@ class Preferences {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Key.responsive)
+        }
+    }
+    
+    /// How to handle an existing output folder.
+    enum Exists: Int {
+        case ask = 0
+        case keepBoth = 1
+        case replace = 2
+    }
+    
+    /// How to handle an existing output folder.
+    var exists: Exists {
+        get {
+            return Exists(rawValue: UserDefaults.standard.object(forKey: Key.exists) as? Int ?? Exists.ask.rawValue) ?? .ask
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: Key.exists)
         }
     }
 }
