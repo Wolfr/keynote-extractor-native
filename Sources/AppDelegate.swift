@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     /// Handles the help button.
     @IBAction func help(_ sender: NSButton) {
-        if let url = URL(string: "https://keynote-extractor.com/") {
+        if let url = URL(string: "https://keynote-extractor.com/help") {
             NSWorkspace.shared().open(url)
         }
     }
