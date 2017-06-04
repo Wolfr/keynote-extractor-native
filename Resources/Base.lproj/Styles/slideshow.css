@@ -1,4 +1,4 @@
-/* Layout for advanced output
+/* Layout for slideshow output
    ========================================================================== */
 
 html, body {
@@ -31,6 +31,10 @@ img, video {
   width: 90%;
   margin: 1em auto;
   padding-bottom: 50px;
+}
+
+.slide-notes:empty {
+  display: none;
 }
 
 .slide-image img {
@@ -90,16 +94,12 @@ img, video {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  color: rgba(255,255,255,0.5);
-  font-size: 13px;
 }
 
 #shortcuts {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  color: #FFF;
-  background: rgba(0,0,0,0.2);
   padding: 0 18px;
   border-radius: 6px;
   font-size: 14px;
@@ -122,9 +122,6 @@ img, video {
 }
 
 #explicit-controls button {
-  background: #333;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #FFF;
   border-radius: 3px;
   padding: 10px 20px;
 }

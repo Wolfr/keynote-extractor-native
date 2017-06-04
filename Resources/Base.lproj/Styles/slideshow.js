@@ -1,6 +1,7 @@
 // Keynote Extractor - Advanced output style
 // Written in Vanilla Javascript
 // @Johan Ronsse / Keynote Extractor 2017
+// @1.0.0
 
 /* Initial view setup
    ========================================================================== */
