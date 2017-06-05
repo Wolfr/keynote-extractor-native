@@ -12,6 +12,7 @@ set -o errexit;
 # the original basename and the extension. E.g. "foo.jpg" for label " + large"
 # will become "foo + large.jpg".
 sizes=(
+    1200='-hg'
     984='-lg'
     728='-md'
     375='-sm'
@@ -65,10 +66,10 @@ for original in "${files[@]}"; do
         for size in "${sizes[@]}"; do
             max_width="${size%=*}";
             label="${size#*=}";
-            sips -Z "$max_width" -s format jpeg -s formatOptions 60 "$original" --out "$basename$label.jpg";
+            sips -Z "$max_width" -s format jpeg -s formatOptions 85 "$original" --out "$basename$label.jpg";
         done;
     fi;
 
-    sips -s format jpeg -s formatOptions 60 "$original" --out "$basename.jpg";
+    sips -s format jpeg -s formatOptions 85 "$original" --out "$basename.jpg";
     rm "$original";
 done;

@@ -38,7 +38,7 @@ struct Output {
     mutating func generate(title: String) throws {
         let allImageNames = try FileManager.default.contentsOfDirectory(atPath: imagesURL.path)
         
-        let imageNames = allImageNames.filter { return !$0.contains("-sm") && !$0.contains("-md") && !$0.contains("-lg") }
+        let imageNames = allImageNames.filter { return !$0.contains("-sm") && !$0.contains("-md") && !$0.contains("-lg") && !$0.contains("-hg") }
         
         if Preferences.shared.formatHTML {
             guard let templateURL = Bundle.main.url(forResource: Preferences.shared.styleFilename, withExtension: "html", subdirectory: Preferences.Style.folderName)
@@ -71,7 +71,7 @@ struct Output {
                 if Preferences.shared.responsiveImages {
                     let names = responsive(baseName: image)
                     
-                    image = "\(image)\" srcset=\"\(names.large) 984w, \(names.medium) 728w, \(names.small) 375w\" sizes=\"100vw"
+                    image = "\(image)\" srcset=\"\(names.huge) 1200w, \(names.large) 984w, \(names.medium) 728w, \(names.small) 375w\" sizes=\"100vw"
                 }
                 
                 image += "\" alt=\"Image of slide number \(index + 1)"
@@ -96,7 +96,7 @@ struct Output {
                 
                 if Preferences.shared.responsiveImages {
                     let names = responsive(baseName: image)
-                    let subdict: JSONDictionary = ["lg" : names.large, "md" : names.medium, "sm" : names.small]
+                    let subdict: JSONDictionary = ["hg" : names.huge, "lg" : names.large, "md" : names.medium, "sm" : names.small]
                     let dict: JSONDictionary = ["image" : image, "images" : subdict, "notes" : note]
                     
                     array.append(dict)
@@ -113,12 +113,12 @@ struct Output {
         }
     }
     
-    private func responsive(baseName: String) -> (small: String, medium: String, large: String) {
+    private func responsive(baseName: String) -> (small: String, medium: String, large: String, huge: String) {
         let temp = NSString(string: baseName)
         let filename = temp.deletingPathExtension
         let fileExtension = temp.pathExtension
         
-        return (small: "\(filename)-sm.\(fileExtension)", medium: "\(filename)-md.\(fileExtension)", large: "\(filename)-lg.\(fileExtension)")
+        return (small: "\(filename)-sm.\(fileExtension)", medium: "\(filename)-md.\(fileExtension)", large: "\(filename)-lg.\(fileExtension)", huge: "\(filename)-hg.\(fileExtension)")
     }
     
     /// Copies the source file to the destination.

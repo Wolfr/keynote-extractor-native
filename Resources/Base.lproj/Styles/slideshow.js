@@ -1,19 +1,13 @@
 // Keynote Extractor - Advanced output style
 // Written in Vanilla Javascript
 // @Johan Ronsse / Keynote Extractor 2017
-// @1.0.0
+// @1.2.0 Production
 
-/* Initial view setup
-   ========================================================================== */
-
-// bool for states
 var showNotes = true;
 var showShortcuts = false;
 
-// int
-var slidePosition = 0;
+var slideNumber = 1;
 
-// selectors for different UI elements
 var $shortcutsToggle = document.getElementById('show-shortcuts');
 var $shortcuts = document.getElementById('shortcuts');
 var $slide = document.querySelectorAll(".slides .slide")
@@ -22,9 +16,6 @@ var $slidePos = document.getElementById('slide-pos-current');
 var $slideTotal = document.getElementById('slides-total');
 var $btnPrevSlide = document.getElementById('btn-prev-slide');
 var $btnNextSlide = document.getElementById('btn-next-slide');
-
-/* State functions
-   ========================================================================== */
 
 function changeShowShortcutsState() {
     if (showShortcuts) {
@@ -47,93 +38,135 @@ function renderShortcutsState() {
 }
 
 function renderNotesState() {
+
     if (showNotes) {
-        // Hide all notes
         for (var i = 0; i < $slideNotes.length; i++) {
             $slideNotes[i].style.display = 'block';
         }
         document.body.classList.add('js-notes-active');
     } else {
-        // Show all notes
         for (var i = 0; i < $slideNotes.length; i++) {
             $slideNotes[i].style.display = 'none';
         }
         document.body.classList.remove('js-notes-active');
     }
+
 }
 
-function renderSlide(slideNumber) {
-    slidePosition = slideNumber;
-    $slidePos.innerHTML = slideNumber;
-    updateHash(slideNumber);
+function hideSlides() {
     for (var i = 0; i < $slide.length; i++) {
         $slide[i].style.display = 'none';
     }
-    var whichSlide = slideNumber - 1;
-    $slide[whichSlide].style.display = 'flex';
-    updateCounter();
 }
 
-function updateHash(slideNumber) {
-    window.location.hash = slideNumber;
+function renderSlide(slideNumber, withHistory) {
+
+    if (slideNumber) {
+        hideSlides();
+        whichSlide = slideNumber - 1;
+        $slide[whichSlide].style.display = 'flex';
+        updateCounter(slideNumber);
+        if (withHistory) {
+            pushHistoryState(slideNumber);
+        }
+    } else {
+        throw "Please define a slide number to render"
+    }
+
+}
+
+function getHash() {
+    return parseInt(window.location.hash.substr(1,9999));
+}
+
+function setHash(slideNumber) {
+    if (slideNumber) {
+        window.location.hash = slideNumber;
+    } else {
+        throw "Please provide an argument to setHash"
+    }
 }
 
 function renderUIState() {
+
     renderShortcutsState();
-    renderNotesState();
+    renderNotesState(); 
+
 }
 
-function init() {
-    renderUIState();
-    for (var i = 0; i < $slide.length; i++) {
-        $slide[i].style.display = 'none';
-    }
-    var currentHash = parseInt(window.location.hash.substr(1,99));
-    if (currentHash <= countSlides()) {
-        renderSlide(currentHash);
-    } else {
-        renderSlide(1);
-    }
+function updateCounter(slideNumber) {
+    $slidePos.innerHTML = slideNumber;
 }
 
-function updateCounter() {
-    $slidePos.innerHTML = slidePosition;
-    $slideTotal.innerHTML = countSlides();
-}
-
-function nextSlide() {
-    if (slidePosition == countSlides()) {
-        return
-    }
-    slidePosition = slidePosition + 1;
-    renderSlide(slidePosition);
-
+function pushHistoryState(slideNumber) {
+    currentUrl = window.location.href.substr(0, window.location.href.indexOf('#'))
+    history.pushState({ lastSlideNumber: slideNumber },'', currentUrl + '#' + slideNumber);
 }
 
 function previousSlide() {
-    if (slidePosition == 1) {
-        return
+
+    if (slideNumber != 1) {
+        slideNumber = slideNumber - 1;
+        renderSlide(slideNumber, true);
     }
-    slidePosition = slidePosition - 1;
-    renderSlide(slidePosition);
+
+}
+
+function nextSlide() {
+
+    if (slideNumber != countSlides()) {
+        slideNumber = slideNumber + 1;
+        renderSlide(slideNumber, true);
+    }
+
+}
+
+function init() {
+
+    renderUIState();
+
+    if (!window.location.hash) {
+        setHash("1");
+        slideNumber = getHash();
+        renderSlide(slideNumber, true);
+    } else {
+        if (window.location.hash == "#0") {
+            alert('this');
+            setHash("1");
+            slideNumber = getHash();
+            renderSlide(slideNumber, true);
+        } else {
+            slideNumber = getHash();
+            renderSlide(slideNumber, true);
+        }
+    }
+
+    $slideTotal.innerHTML = countSlides();
+
 }
 
 document.addEventListener("DOMContentLoaded", function(event) { 
+
     $btnPrevSlide.onclick = function() {
         previousSlide();
     }
+
     $btnNextSlide.onclick = function() {
         nextSlide();
     }
+
     $shortcutsToggle.onclick = function() {
         changeShowShortcutsState();
         renderShortcutsState();
     };
+
     document.body.onkeyup =  function(e) {
+
         if (e.keyCode === 191) {
             changeShowShortcutsState();
             renderShortcutsState();
         }
+
         if (e.keyCode === 78) {
             if (showNotes) {
                 showNotes = false;
@@ -142,12 +175,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
             renderNotesState()
         }
+
         if (e.keyCode === 37) {
             previousSlide()
         }
+
         if (e.keyCode === 39) {
             nextSlide()
         }
+
     };
+
+    window.addEventListener('popstate', function(e) {
+        var histState = e.state;
+        console.log(e.state);
+        renderSlide(histState.lastSlideNumber);
+    });
+
     init();
+
 });
