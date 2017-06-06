@@ -1,0 +1,48 @@
+/* Dark grey skin
+   ========================================================================== */
+
+body {
+  background: #333;
+  color: #DDD;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #FFF;
+}
+
+a {
+  color: #FFF;
+}
+
+.slide--bordered {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.slide-image img {
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/*
+  Extras for slideshow output
+  @TODO: Only render this when choosing slideshow option
+*/
+
+#show-shortcuts {
+  opacity: 0.5;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+}
+
+#shortcuts {
+  color: #FFF;
+  background: rgba(0,0,0,0.2);
+}
+
+#explicit-controls button {
+  background: #333;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #FFF;
+}

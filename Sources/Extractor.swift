@@ -3,7 +3,6 @@
 //  KeynoteExtractor
 //
 //  Created by David Sinclair on 2016-10-23.
-//  Copyright © 2016 Mono Company BVBA. All rights reserved.
 //
 
 import Cocoa
@@ -33,7 +32,7 @@ struct Extractor {
         DispatchQueue.init(label: "com.com.mono.keynote-extractor.extractor").async {
             do {
                 let fileManager = FileManager.default
-                let numberOfSteps: Double = 11
+                let numberOfSteps: Double = 12
                 var currentStep: Double = 0
                 
                 currentStep = self.report(step: currentStep, of: numberOfSteps)
@@ -75,10 +74,14 @@ struct Extractor {
                 currentStep = self.report(step: currentStep, of: numberOfSteps)
                 let apxlURL = unzipURL.appendingPathComponent("index.apxl", isDirectory: false)
                 
+                currentStep = self.report(step: currentStep, of: numberOfSteps)
+                try Responsive(url: imagesURL).execute()
+                
                 let notes = try Notes(url: apxlURL).parse()
                 
                 currentStep = self.report(step: currentStep, of: numberOfSteps)
-                let output = try Output(images: imagesURL, notes: notes)
+                var output = Output(images: imagesURL, notes: notes)
+                try output.generate(title: self.destinationURL.lastPathComponent)
                 try output.write(to: self.destinationURL)
                 
                 currentStep = self.report(step: currentStep, of: numberOfSteps)
